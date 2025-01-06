@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1060ea;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.tool-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0 10px;
+    border-right: 1px solid #ddd;
+}
+
+.tool-section:last-child {
+    border-right: none;
+}
+
+.tool {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 40px;
+    white-space: nowrap;
+}
+
+.tool:hover {
+    background-color: #e0e0e0;
+}
+
+.tool.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#colorPicker {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#brushSize {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+canvas {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background-color: white;
+    cursor: crosshair;
+}
+
+@media (max-width: 768px) {
+    .toolbar {
+        flex-wrap: wrap;
+    }
+
+    .tool-section {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tool-section:last-child {
+        border-bottom: none;
+    }
+
+    canvas {
+        top: 180px;
+    }
+}
+
+.fill-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.fill-option input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+} 
